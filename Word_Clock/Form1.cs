@@ -47,9 +47,9 @@ namespace Word_Clock
 
         private void nudHours_ValueChanged(object sender, EventArgs e)
         {
-            foreach (var x in _hoursDictionary.Values)
+            foreach (var word in _hoursDictionary.Values)
             {
-                rtbWord.ResetText(x[0],x[1]);
+                rtbWord.ResetText(word);
             }
             var hour = nudHours.Value.ToString();
             var values = _hoursDictionary[hour];
@@ -58,16 +58,79 @@ namespace Word_Clock
 
         private void nudMinutes_ValueChanged(object sender, EventArgs e)
         {
-            foreach (var x in _descriptorDictionary.Values)
+            foreach (var word in _descriptorDictionary.Values)
             {
-                rtbWord.ResetText(x[0],x[1]);
+                rtbWord.ResetText(word);
             }
+
+            var past = _descriptorDictionary["PAST"];
             var seconds = nudMinutes.Value;
-            if (seconds < 5)
+            if (seconds < 35)
             {
-                var y = _descriptorDictionary["O'CLOCK"];
-                rtbWord.HightlightText(y[0],y[1]);
+                if (seconds < 30)
+                {
+                    if (seconds < 25)
+                    {
+                        if (seconds < 20)
+                        {
+                            if (seconds < 15)
+                            {
+                                if (seconds < 10)
+                                {
+                                    if (seconds < 5)
+                                    {
+                                        var oclock = _descriptorDictionary["O'CLOCK"];
+                                        rtbWord.HightlightText(oclock);
+                                    }
+                                    else
+                                    {
+                                        var five = _descriptorDictionary["FIVE"];
+                                        rtbWord.HightlightText(five);
+                                        rtbWord.HightlightText(past);
+                                    }
+                                }
+                                else
+                                {
+                                    var ten = _descriptorDictionary["TEN"];
+                                    rtbWord.HightlightText(ten);
+                                    rtbWord.HightlightText(past);
+                                }
+                            }
+                            else
+                            {
+                                var quarter = _descriptorDictionary["QUARTER"];
+                                rtbWord.HightlightText(quarter);
+                                rtbWord.HightlightText(past);
+                            }
+                        }
+                        else
+                        {
+                            var twenty = _descriptorDictionary["TWENTY"];
+                            rtbWord.HightlightText(twenty);
+                            rtbWord.HightlightText(past);
+                        }
+                    }
+                    else
+                    {
+                        var twenty = _descriptorDictionary["TWENTY"];
+                        var five = _descriptorDictionary["FIVE"];
+                        rtbWord.HightlightText(twenty);
+                        rtbWord.HightlightText(five);
+                        rtbWord.HightlightText(past);
+                    }
+                }
+                else
+                {
+                    var half = _descriptorDictionary["HALF"];
+                    rtbWord.HightlightText(half);
+                    rtbWord.HightlightText(past);
+                }
             }
+            else
+            {
+                
+            }
+
         }
     }
 }

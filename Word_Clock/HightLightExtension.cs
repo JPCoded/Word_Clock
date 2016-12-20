@@ -27,6 +27,13 @@ namespace Word_Clock
             rtBox.SelectionColor = Color.Silver;
             rtBox.DeselectAll();
         }
+
+        public static void ResetText(this RichTextBox rtBox, int[] startstop)
+        {
+            rtBox.Select(startstop[0],startstop[1]);
+            rtBox.SelectionColor = Color.Silver;
+            rtBox.DeselectAll();
+        }
         public static void ResetColor(this RichTextBox rtBox)
         {
             rtBox.SelectAll();
