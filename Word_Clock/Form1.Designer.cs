@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.rtbWord = new System.Windows.Forms.RichTextBox();
+            this.nudHours = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHours)).BeginInit();
             this.SuspendLayout();
             // 
             // rtbWord
             // 
-            this.rtbWord.BackColor = System.Drawing.SystemColors.MenuText;
+            this.rtbWord.BackColor = System.Drawing.Color.Black;
             this.rtbWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbWord.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.rtbWord.Font = new System.Drawing.Font("Lucida Console", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbWord.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.rtbWord.ForeColor = System.Drawing.Color.Silver;
             this.rtbWord.Location = new System.Drawing.Point(0, 0);
             this.rtbWord.Name = "rtbWord";
             this.rtbWord.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
@@ -46,14 +48,39 @@
             this.rtbWord.Text = "ITTISITWENTY\nQUARTERHALFM\nTENFIVEEPAST\nTOATWELVEONE\nTWOTHREEFOUR\nFIVESIXSEVEN\nEIG" +
     "HTNINETEN\nELEVENNDDATE\nO\'CLOCKTIMEA";
             // 
+            // nudHours
+            // 
+            this.nudHours.Location = new System.Drawing.Point(223, 12);
+            this.nudHours.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.nudHours.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudHours.Name = "nudHours";
+            this.nudHours.Size = new System.Drawing.Size(39, 20);
+            this.nudHours.TabIndex = 1;
+            this.nudHours.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudHours.ValueChanged += new System.EventHandler(this.nudHours_ValueChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(367, 261);
+            this.Controls.Add(this.nudHours);
             this.Controls.Add(this.rtbWord);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.nudHours)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -61,6 +88,7 @@
         #endregion
 
         private System.Windows.Forms.RichTextBox rtbWord;
+        private System.Windows.Forms.NumericUpDown nudHours;
     }
 }
 
