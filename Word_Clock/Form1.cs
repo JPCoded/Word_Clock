@@ -63,74 +63,69 @@ namespace Word_Clock
                 rtbWord.ResetText(word);
             }
 
-            var past = _descriptorDictionary["PAST"];
+
             var seconds = nudMinutes.Value;
-            if (seconds < 35)
+            var pastto = (seconds >= 35) ? _descriptorDictionary["TO"] : _descriptorDictionary["PAST"];
+
+
+            if (seconds < 30 || seconds >= 35)
             {
-                if (seconds < 30)
+                if (seconds < 25 || seconds >= 40)
                 {
-                    if (seconds < 25)
+                    if (seconds < 20 || seconds >= 45)
                     {
-                        if (seconds < 20)
+                        if (seconds < 15 || seconds >= 50)
                         {
-                            if (seconds < 15)
+                            if (seconds < 10 || seconds >= 55)
                             {
-                                if (seconds < 10)
+                                if (seconds < 5)
                                 {
-                                    if (seconds < 5)
-                                    {
-                                        var oclock = _descriptorDictionary["O'CLOCK"];
-                                        rtbWord.HightlightText(oclock);
-                                    }
-                                    else
-                                    {
-                                        var five = _descriptorDictionary["FIVE"];
-                                        rtbWord.HightlightText(five);
-                                        rtbWord.HightlightText(past);
-                                    }
+                                    var oclock = _descriptorDictionary["O'CLOCK"];
+                                    rtbWord.HightlightText(oclock);
                                 }
                                 else
                                 {
-                                    var ten = _descriptorDictionary["TEN"];
-                                    rtbWord.HightlightText(ten);
-                                    rtbWord.HightlightText(past);
+                                    var five = _descriptorDictionary["FIVE"];
+                                    rtbWord.HightlightText(five);
+                                    rtbWord.HightlightText(pastto);
                                 }
                             }
                             else
                             {
-                                var quarter = _descriptorDictionary["QUARTER"];
-                                rtbWord.HightlightText(quarter);
-                                rtbWord.HightlightText(past);
+                                var ten = _descriptorDictionary["TEN"];
+                                rtbWord.HightlightText(ten);
+                                rtbWord.HightlightText(pastto);
                             }
                         }
                         else
                         {
-                            var twenty = _descriptorDictionary["TWENTY"];
-                            rtbWord.HightlightText(twenty);
-                            rtbWord.HightlightText(past);
+                            var quarter = _descriptorDictionary["QUARTER"];
+                            rtbWord.HightlightText(quarter);
+                            rtbWord.HightlightText(pastto);
                         }
                     }
                     else
                     {
                         var twenty = _descriptorDictionary["TWENTY"];
-                        var five = _descriptorDictionary["FIVE"];
                         rtbWord.HightlightText(twenty);
-                        rtbWord.HightlightText(five);
-                        rtbWord.HightlightText(past);
+                        rtbWord.HightlightText(pastto);
                     }
                 }
                 else
                 {
-                    var half = _descriptorDictionary["HALF"];
-                    rtbWord.HightlightText(half);
-                    rtbWord.HightlightText(past);
+                    var twenty = _descriptorDictionary["TWENTY"];
+                    var five = _descriptorDictionary["FIVE"];
+                    rtbWord.HightlightText(twenty);
+                    rtbWord.HightlightText(five);
+                    rtbWord.HightlightText(pastto);
                 }
             }
             else
             {
-                
+                var half = _descriptorDictionary["HALF"];
+                rtbWord.HightlightText(half);
+                rtbWord.HightlightText(pastto);
             }
-
         }
     }
 }
