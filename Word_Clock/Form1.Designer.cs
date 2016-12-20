@@ -30,7 +30,9 @@
         {
             this.rtbWord = new System.Windows.Forms.RichTextBox();
             this.nudHours = new System.Windows.Forms.NumericUpDown();
+            this.nudMinutes = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nudHours)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).BeginInit();
             this.SuspendLayout();
             // 
             // rtbWord
@@ -71,16 +73,36 @@
             0});
             this.nudHours.ValueChanged += new System.EventHandler(this.nudHours_ValueChanged);
             // 
+            // nudMinutes
+            // 
+            this.nudMinutes.Location = new System.Drawing.Point(268, 12);
+            this.nudMinutes.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.nudMinutes.Name = "nudMinutes";
+            this.nudMinutes.Size = new System.Drawing.Size(59, 20);
+            this.nudMinutes.TabIndex = 2;
+            this.nudMinutes.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudMinutes.ValueChanged += new System.EventHandler(this.nudMinutes_ValueChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(367, 261);
+            this.Controls.Add(this.nudMinutes);
             this.Controls.Add(this.nudHours);
             this.Controls.Add(this.rtbWord);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.nudHours)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -89,6 +111,7 @@
 
         private System.Windows.Forms.RichTextBox rtbWord;
         private System.Windows.Forms.NumericUpDown nudHours;
+        private System.Windows.Forms.NumericUpDown nudMinutes;
     }
 }
 
