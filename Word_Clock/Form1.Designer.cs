@@ -28,12 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.rtbWord = new System.Windows.Forms.RichTextBox();
+            this.SuspendLayout();
+            // 
+            // rtbWord
+            // 
+            this.rtbWord.BackColor = System.Drawing.SystemColors.MenuText;
+            this.rtbWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbWord.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.rtbWord.Font = new System.Drawing.Font("Lucida Console", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbWord.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.rtbWord.Location = new System.Drawing.Point(0, 0);
+            this.rtbWord.Name = "rtbWord";
+            this.rtbWord.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.rtbWord.Size = new System.Drawing.Size(217, 258);
+            this.rtbWord.TabIndex = 0;
+            this.rtbWord.Text = "ITTISITWENTY\nQUARTERHALFM\nTENFIVEEPAST\nTOATWELVEONE\nTWOTHREEFOUR\nFIVESIXSEVEN\nEIG" +
+    "HTNINETEN\nELEVENNDDATE\nO\'CLOCKTIMEA";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.rtbWord);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.RichTextBox rtbWord;
     }
 }
 
