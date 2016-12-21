@@ -40,6 +40,7 @@ namespace Word_Clock
 
         public Form1()
         {
+          
             InitializeComponent();
             rtbWord.HightlightText(0, 2); //IT
             rtbWord.HightlightText(3, 2); //IS
@@ -55,7 +56,8 @@ namespace Word_Clock
             {
                 rtbWord.ResetText(word);
             }
-
+            rtbWord.HightlightText(0, 2); //IT
+            rtbWord.HightlightText(3, 2); //IS
             var values = _hoursDictionary[hour.ToString()];
             rtbWord.HightlightText(values);
 
@@ -200,6 +202,14 @@ namespace Word_Clock
                 rtbWord.HightlightText(half);
                 rtbWord.HightlightText(pastto);
             }
+        }
+
+        private void tmrTime_Tick(object sender, EventArgs e)
+        {
+            var hour = DateTime.Now.Hour;
+            var minute = DateTime.Now.Minute;
+            hour = (hour > 12) ? hour - 12 : hour;
+            ChangeTime(hour, minute);
         }
     }
 }

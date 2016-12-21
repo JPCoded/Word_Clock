@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.rtbWord = new System.Windows.Forms.RichTextBox();
             this.nudHours = new System.Windows.Forms.NumericUpDown();
             this.nudMinutes = new System.Windows.Forms.NumericUpDown();
+            this.tmrTime = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).BeginInit();
             this.SuspendLayout();
@@ -91,11 +93,17 @@
             0});
             this.nudMinutes.ValueChanged += new System.EventHandler(this.nudMinutes_ValueChanged);
             // 
+            // tmrTime
+            // 
+            this.tmrTime.Enabled = true;
+            this.tmrTime.Interval = 2000;
+            this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 261);
+            this.ClientSize = new System.Drawing.Size(332, 261);
             this.Controls.Add(this.nudMinutes);
             this.Controls.Add(this.nudHours);
             this.Controls.Add(this.rtbWord);
@@ -112,6 +120,7 @@
         private System.Windows.Forms.RichTextBox rtbWord;
         private System.Windows.Forms.NumericUpDown nudHours;
         private System.Windows.Forms.NumericUpDown nudMinutes;
+        private System.Windows.Forms.Timer tmrTime;
     }
 }
 
