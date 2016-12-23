@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Word_Clock
 {
-    public partial class Form1 : Form
+    public sealed partial class Form1 : Form
     {
         private readonly Dictionary<string, int[]> _descriptorDictionary = new Dictionary<string, int[]>
         {
@@ -40,10 +40,8 @@ namespace Word_Clock
 
         public Form1()
         {
-          
             InitializeComponent();
-            rtbWord.HightlightText(0, 2); //IT
-            rtbWord.HightlightText(3, 2); //IS
+            DoubleBuffered = true;
         }
 
         private void ChangeTime(int hour, int minute)
@@ -56,6 +54,7 @@ namespace Word_Clock
             {
                 rtbWord.ResetText(word);
             }
+
             rtbWord.HightlightText(0, 2); //IT
             rtbWord.HightlightText(3, 2); //IS
             var values = _hoursDictionary[hour.ToString()];
