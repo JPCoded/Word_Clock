@@ -47,7 +47,7 @@
             this.rtbWord.Location = new System.Drawing.Point(0, 0);
             this.rtbWord.Name = "rtbWord";
             this.rtbWord.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.rtbWord.Size = new System.Drawing.Size(217, 258);
+            this.rtbWord.Size = new System.Drawing.Size(213, 265);
             this.rtbWord.TabIndex = 0;
             this.rtbWord.Text = "ITTISITWENTY\nQUARTERHALFM\nTENFIVEEPAST\nTOATWELVEONE\nTWOTHREEFOUR\nFIVESIXSEVEN\nEIG" +
     "HTNINETEN\nELEVENNDDATE\nO\'CLOCKTIMEA";
@@ -103,7 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 261);
+            this.ClientSize = new System.Drawing.Size(332, 272);
             this.Controls.Add(this.nudMinutes);
             this.Controls.Add(this.nudHours);
             this.Controls.Add(this.rtbWord);

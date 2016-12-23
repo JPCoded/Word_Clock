@@ -210,5 +210,7 @@ namespace Word_Clock
             hour = (hour > 12) ? hour - 12 : hour;
             ChangeTime(hour, minute);
         }
+
+
     }
 }
