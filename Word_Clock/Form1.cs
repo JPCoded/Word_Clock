@@ -121,87 +121,8 @@ namespace Word_Clock
                 rtbWord.HightlightText(pastto);
             }
         }
-
-        private void nudHours_ValueChanged(object sender, EventArgs e)
-        {
-            foreach (var word in _hoursDictionary.Values)
-            {
-                rtbWord.ResetText(word);
-            }
-            var hour = nudHours.Value.ToString();
-            var values = _hoursDictionary[hour];
-            rtbWord.HightlightText(values);
-        }
-
-        private void nudMinutes_ValueChanged(object sender, EventArgs e)
-        {
-            foreach (var word in _descriptorDictionary.Values)
-            {
-                rtbWord.ResetText(word);
-            }
-
-            var seconds = nudMinutes.Value;
-            var pastto = (seconds >= 35) ? _descriptorDictionary["TO"] : _descriptorDictionary["PAST"];
-
-            if (seconds < 30 || seconds >= 35)
-            {
-                if (seconds < 25 || seconds >= 40)
-                {
-                    if (seconds < 20 || seconds >= 45)
-                    {
-                        if (seconds < 15 || seconds >= 50)
-                        {
-                            if (seconds < 10 || seconds >= 55)
-                            {
-                                if (seconds < 5)
-                                {
-                                    var oclock = _descriptorDictionary["O'CLOCK"];
-                                    rtbWord.HightlightText(oclock);
-                                }
-                                else
-                                {
-                                    var five = _descriptorDictionary["FIVE"];
-                                    rtbWord.HightlightText(five);
-                                    rtbWord.HightlightText(pastto);
-                                }
-                            }
-                            else
-                            {
-                                var ten = _descriptorDictionary["TEN"];
-                                rtbWord.HightlightText(ten);
-                                rtbWord.HightlightText(pastto);
-                            }
-                        }
-                        else
-                        {
-                            var quarter = _descriptorDictionary["QUARTER"];
-                            rtbWord.HightlightText(quarter);
-                            rtbWord.HightlightText(pastto);
-                        }
-                    }
-                    else
-                    {
-                        var twenty = _descriptorDictionary["TWENTY"];
-                        rtbWord.HightlightText(twenty);
-                        rtbWord.HightlightText(pastto);
-                    }
-                }
-                else
-                {
-                    var twenty = _descriptorDictionary["TWENTY"];
-                    var five = _descriptorDictionary["FIVE"];
-                    rtbWord.HightlightText(twenty);
-                    rtbWord.HightlightText(five);
-                    rtbWord.HightlightText(pastto);
-                }
-            }
-            else
-            {
-                var half = _descriptorDictionary["HALF"];
-                rtbWord.HightlightText(half);
-                rtbWord.HightlightText(pastto);
-            }
-        }
+      
+      
 
         private void tmrTime_Tick(object sender, EventArgs e)
         {
